@@ -1,0 +1,274 @@
+/** Reescribir colores */
+
+:root {
+    --bs-blue: #037bc0;
+    --bs-green: #8cb008;
+    --bs-dark-green: #75920b;
+}
+
+/*reglas generales*/
+
+html {
+    font-size: 62.5%;
+}
+
+a, .nav-link {
+    text-decoration: none;
+    color: black;
+    transition: 0.5s all;
+}
+
+a:hover, .nav-link:hover {
+    transition: 0.5s all;
+    color: var(--bs-blue) !important;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 2;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair', serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2,
+h3 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+/* Body */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    padding: 1rem;
+}
+
+.header-color {
+    color: var(--bs-blue);
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    font-size: 1.75rem;
+    width: 100%;
+}
+
+.navbar button {
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.hero {
+    background-image: url(principal.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.main {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.grid-category {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 4rem;
+}
+
+.grid-category img {
+    transition: 0.5s all;
+}
+
+.grid-category img:hover {
+    transition: 0.5s all;
+    scale: 1.05;
+}
+
+.grid-category div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-category a {
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 5rem;
+}
+
+footer div h3 {
+    text-align: center;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/** Productos */
+
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.grid-products .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bs-blue);
+    color: white;
+    padding: 5rem;
+    text-align: center;
+}
+
+.grid-products .description button {
+    background-color: var(--bs-green);
+    color: white;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: 0.5s all;
+    font-weight: bold;
+}
+
+.grid-products .description button:hover {
+    transition: 0.5s all;
+    background-color: var(--bs-dark-green);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-products .grid-children {
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 0.5rem;
+}
+
+.grid-products .grid-children h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.img-div-1 {
+    width: 50%;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.div3 {
+    grid-area: 2 / 4 / 3 / 7;
+    display: flex;
+    flex-direction: column;
+}
+
+.div4 {
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.div5 {
+    grid-area: 3 / 3 / 4 / 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.div6 {
+    grid-area: 3 / 5 / 4 / 7;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Media Query*/
+
+@media (max-width: 768px) {
+    .hero {
+        height: 55rem;
+    }
+
+    .grid-products {
+        grid-template-columns: unset;
+        grid-template-rows: repeat(1fr, 6s);
+    }
+
+    .grid-products .description {
+        padding: 4rem 3rem;
+    }
+
+    .grid-children {
+        grid-area: unset;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .grid-category a {
+        font-size: 1.5rem;
+    }
+
+    .img-div-1 {
+        width: 100%;
+    }
+
+    .grid-category, footer {
+        grid-template-columns: unset;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .navbar-nav {
+        font-size: 1.25rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+}
